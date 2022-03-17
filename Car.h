@@ -4,8 +4,11 @@
 struct Car : Vehicle
 {
     Car(const std::string& s);
-    void closeWindows();
+    ~Car() override;
+    Car(const Car&) = default;
+    Car& operator=(const Car&) = default;
 
+    void closeWindows();
     void tryToEvade() override;
     void setSpeed(int s) override;
 };
