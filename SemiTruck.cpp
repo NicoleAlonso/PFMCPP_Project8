@@ -2,7 +2,11 @@
 
 SemiTruck::SemiTruck(const std::string& n) : Vehicle(n) {}
 
-SemiTruck::~SemiTruck() {}
+SemiTruck::~SemiTruck() = default;
+
+SemiTruck::SemiTruck(const SemiTruck&) = default;
+
+SemiTruck& SemiTruck::operator=(const SemiTruck&) = default;
 
 void SemiTruck::letOthersOvertake()
 {
@@ -10,7 +14,7 @@ void SemiTruck::letOthersOvertake()
     std::cout << name << " is letting faster vehicles overtake" << std::endl;
 }
 
-void SemiTruck::doNotEvade()
+void SemiTruck::pullOver()
 {
     setSpeed(0);
     std::cout << name << ": hello officer, is there any problem?" << std::endl;

@@ -39,7 +39,7 @@ void Highway::removeVehicleInternal(Vehicle* v)
     //assert(false);
     if(auto* semiTruck = dynamic_cast<SemiTruck*>(v))
     {
-        semiTruck->doNotEvade();
+        semiTruck->pullOver();
     } 
     else if(auto* car = dynamic_cast<Car*>(v))
     {

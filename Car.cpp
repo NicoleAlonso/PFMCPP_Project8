@@ -4,7 +4,11 @@
 
 Car::Car(const std::string& n) : Vehicle(n) {}
 
-Car::~Car() {}
+Car::~Car() = default;
+
+Car::Car(const Car&) = default;
+    
+Car& Car::operator=(const Car&) = default;
 
 void Car::closeWindows()
 {
